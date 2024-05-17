@@ -31,6 +31,13 @@ namespace ApiPersonajesAWS.Controllers
             return await this.repo.FindPersonajeAsync(idpersonaje);
         }
 
+        [HttpPut]
+        public async Task<ActionResult> UpdatePersonaje(Personaje personaje)
+        {
+            await this.repo.UpdatePersonajeAsync(personaje);
+            return Ok();
+        }
+
         [HttpPost]
         public async Task<ActionResult> CrearPersonaje(Personaje personaje)
         {
@@ -42,7 +49,7 @@ namespace ApiPersonajesAWS.Controllers
         public async Task<ActionResult> DeletePersonaje(int idpersonaje)
         {
             await this.repo.DeletePersonajeAsync(idpersonaje);
-            return Ok();    
+            return Ok();
         }
     }
 }
